@@ -6,6 +6,17 @@ jobs:
     steps:
       - checkout
       - run: ls -al
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync ~/ s3//www.melissawadsworth.co.uk --delete
 
 
 
