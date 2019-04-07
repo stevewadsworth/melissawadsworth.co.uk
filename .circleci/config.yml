@@ -5,18 +5,19 @@ jobs:
       - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - run: echo "Checked out" # run the `echo` command
+      - run: ls -al
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
+    working_directory: ~/
     steps:
       - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync . s3//www.melissawadsworth.co.uk --delete
+          command: aws s3 sync ~/ s3//www.melissawadsworth.co.uk --delete
 
 workflows:
   version: 2
