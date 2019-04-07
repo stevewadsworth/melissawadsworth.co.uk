@@ -6,11 +6,12 @@ html, body {
   justify-content: center;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background-color: white;
 }
 
 #contentWrapper {
   position: relative;
-  flex-basis: 900px;
+  flex-basis: 900px; /* Set the max width for the content */
   margin: 0;
   text-align: center;
   display: flex;
