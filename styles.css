@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   display: flex;
@@ -9,9 +10,10 @@ html, body {
   background-color: white;
 }
 
-#contentWrapper {
+.contentWrapper {
   position: relative;
-  flex-basis: 900px; /* Set the max width for the content */
+  /* Set the max width for the content */
+  flex-basis: 900px;
   margin: 0;
   text-align: center;
   display: flex;
@@ -19,7 +21,7 @@ html, body {
   height: 100%;
 }
 
-#siteHeader {
+.siteHeader {
   position: relative;
   top: 0;
   flex: 0 0 auto;
@@ -33,16 +35,76 @@ html, body {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-#mainContent {
+.mainContent {
   position: relative;
   flex: 1 0 auto;
 }
 
-#siteFooter {
+.mainContent section {
+  max-width: 750px;
+  margin: auto;
+  display: block;
+}
+
+.mainContent p {
+  text-align: start;
+  margin: 1rem;
+}
+
+h1, h2, h3 {
+  margin: 1rem;
+}
+
+.siteFooter {
   flex: 0 0 auto;
   position: relative;
   bottom: 0;
   width: 100%;
   height: auto;
   font-size: 0.75rem;
+}
+
+.exhibitions {
+  /* Set the max width for the content */
+  position: relative;
+  text-align: start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .exhibitions > li {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .exhibitionsDate {
+    flex-basis: 25%;
+    /* Set the max width for the content */
+    display: block;
+    margin: 0 1rem auto auto;
+  }
+
+  .exhibitionsDate > p {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+
+  .exhibitionsDescription {
+    flex-basis: 500px;
+    /* Set the max width for the content */
+  }
+
+  .exhibitionsDescription > h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .exhibitionsDescription > p {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+  }
 }
