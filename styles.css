@@ -2,8 +2,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -13,7 +11,6 @@ body {
 .contentWrapper {
   position: relative;
   /* Set the max width for the content */
-  flex-basis: 900px;
   margin: 0;
   text-align: center;
   display: flex;
@@ -29,10 +26,27 @@ body {
   height: auto;
 }
 
-.fadedRule {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+.siteFooter {
+  flex: 0 0 auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 750px) {
+  .siteHeader > hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  .siteFooter > hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
 }
 
 .mainContent {
@@ -53,15 +67,6 @@ body {
 
 h1, h2, h3 {
   margin: 1rem;
-}
-
-.siteFooter {
-  flex: 0 0 auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  font-size: 0.75rem;
 }
 
 .exhibitions {
@@ -106,5 +111,21 @@ h1, h2, h3 {
   .exhibitionsDescription > p {
     font-size: 0.8rem;
     margin: 0.5rem 0;
+  }
+}
+
+.exhibitions  hr {
+  border: 0;
+  height: 1px;
+}
+
+@media screen and (max-width: 750px) {
+  .exhibitions  hr {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+  }
+}
+@media screen and (min-width: 750px) {
+  .exhibitions  hr {
+    background-color: rgba(0, 0, 0, 0.25);
   }
 }
