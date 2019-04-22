@@ -4,7 +4,7 @@ body {
   width: 100%;
   justify-content: center;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Geneva, Tahoma, sans-serif;
   background-color: white;
 }
 
@@ -33,6 +33,7 @@ body {
   width: 100%;
   height: auto;
   font-size: 0.75rem;
+  margin-top: 3rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -61,7 +62,7 @@ body {
 }
 
 .mainContent p {
-  text-align: start;
+  text-align: justify;
   margin: 1rem;
 }
 
@@ -70,7 +71,6 @@ h1, h2, h3 {
 }
 
 .exhibitions {
-  /* Set the max width for the content */
   position: relative;
   text-align: start;
   list-style-type: none;
@@ -87,7 +87,6 @@ h1, h2, h3 {
 
   .exhibitionsDate {
     flex-basis: 25%;
-    /* Set the max width for the content */
     display: block;
     margin: 0 1rem auto auto;
   }
@@ -99,8 +98,7 @@ h1, h2, h3 {
   }
 
   .exhibitionsDescription {
-    flex-basis: 500px;
-    /* Set the max width for the content */
+    flex-basis: 75%;
   }
 
   .exhibitionsDescription > h3 {
@@ -111,6 +109,17 @@ h1, h2, h3 {
   .exhibitionsDescription > p {
     font-size: 0.8rem;
     margin: 0.5rem 0;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 750px) {
+  .exhibitionsDescription > h3 {
+    font-size: 1rem;
+  }
+
+  .exhibitionsDescription > p {
+    font-size: 0.8rem;
+    text-align: left;
   }
 }
 
@@ -127,5 +136,53 @@ h1, h2, h3 {
 @media screen and (min-width: 750px) {
   .exhibitions  hr {
     background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.contacts {
+  /* Set the max width for the content */
+  position: relative;
+  text-align: start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 500px) {
+  .contacts > li {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contactsType {
+    flex-basis: 40%;
+    margin: 0 1rem auto;
+    padding: 0;
+    text-align: right;
+  }
+
+  .contactsDetails {
+    flex-basis: 60%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contacts > li {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+  }
+
+  .contactsType {
+    margin: 0.5rem 1rem 0;
+    padding: 0;
+  }
+
+  .contactsDetails {
+    margin: 0 1rem;
+    padding: 0;
   }
 }
