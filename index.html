@@ -10,8 +10,13 @@
   <meta name="description" content="Home of the artist Melissa Wadswworth">
   <meta name="author" content="Melissa Wadsworth">
 
+  <!-- Import Google webfont -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Import fontawsome for some icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
 
 </head>
 
@@ -34,6 +39,38 @@
 
       <section id="gallery">
         <h2>Gallery</h2>
+        <div class="galleryContainer">
+          <button class="galleryButtonText galleryButtonTextLeft" onclick="moveGallery(1)"><span class="fas fa-chevron-left"></span> Previous</button>
+          <button class="galleryButtonText galleryButtonTextRight" onclick="moveGallery(-1)">Next <span class="fas fa-chevron-right"></span></button>
+          <button id="leftButton" class="galleryButton galleryButtonLeft" onclick="moveGallery(-1)">
+            <span class="fas fa-chevron-left"></span>
+          </button>
+          <ul id="galleryList" class="galleryList">
+            <li class="galleryItem galleryItemVisible">
+              <div class="galleryItemContainer">
+                <img class="galleryImage" src="images/2C853680-A6F4-4D64-8DE1-E60C8C93BC95.jpeg" alt="Hill and Vale, Charcoal on paper, 2019">
+                <div class="galleryDescription">
+                    <p>Hill and Vale</p>
+                    <p>Charcoal on paper</p>
+                    <p>2019</p>
+                  </div>
+                </div>
+            </li>
+            <li class="galleryItem">
+              <div class="galleryItemContainer">
+                <img class="galleryImage" src="images/BC40F072-6A72-4665-965C-20261A9B611E.jpeg" alt="Coombe Bissett Barn III, Charcoal on paper, 2019">
+                <div class="galleryDescription">
+                    <p>Coombe Bissett Barn III</p>
+                    <p>Charcoal on paper</p>
+                    <p>2019</p>
+                  </div>
+                </div>
+              </li>
+          </ul>
+          <button id="rightButton" class="galleryButton galleryButtonRight" onclick="moveGallery(1)">
+            <span class="fas fa-chevron-right"></span>
+          </button>
+       </div>
       </section>
 
       <section id="exhibitions">
