@@ -12,9 +12,14 @@ function moveGallery(direction) {
 
 function openMenu() {
   let topNav = document.querySelector(".topNav");
+  let icon = topNav.querySelector(".icon i");
   if (topNav.className === "topNav") {
     topNav.classList.add("responsive");
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-times");
   } else {
     topNav.classList.remove("responsive");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
   }
 }
