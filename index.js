@@ -9,3 +9,12 @@ function moveGallery(direction) {
   pic.classList.remove("galleryItemVisible");
   next.classList.add("galleryItemVisible");
 }
+
+function openMenu() {
+  let topNav = document.querySelector(".topNav");
+  if (topNav.className === "topNav") {
+    topNav.classList.add("responsive");
+  } else {
+    topNav.classList.remove("responsive");
+  }
+}
