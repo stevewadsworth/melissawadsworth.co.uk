@@ -120,6 +120,7 @@ h1, h2, h3 {
 @media screen and (max-width: 750px) {
   .exhibitionsDescription > h3 {
     font-size: 1rem;
+    margin: 1rem;
   }
 
   .exhibitionsDescription > p {
