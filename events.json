@@ -1,0 +1,38 @@
+{
+    "title": "Exhibitions",
+    "description": "Melissa's work is often exhibited in and around Salisbury, and further afield. For current and upcoming exhibitions, see below.",
+    "events": [
+        {
+            "title": "Wylye Valley Art Trail",
+            "description": "Wylye Valley Art Trail is a ten day festival of visual art and craft in and around the Wylye Valley, South Wiltshire.",
+            "location": "Langford Parish Hall, Wylye Road, Hanging Langford, SP3 4PA",
+            "start": "18/05/2019",
+            "end": "27/05/2019",
+            "url": "https://wvat.co.uk/Artists/Trail/?search=Area-Hanging%20Langford-Search"
+        },
+        {
+            "title": "Picture Salisbury - Salisbury Group of Artists",
+            "description": "",
+            "location": "Arundells, The Close, Salisbury",
+            "start": "23/03/2019",
+            "end": "21/05/2019",
+            "url": ""
+        },
+        {
+            "title": "Plain Arts Exhibition at Salisbury Medical Practice",
+            "description": "",
+            "location": "Salisbury Medical Practice, Fisherton House, Fountain Way, Wilton Road, Salisbury, SP2 7FD",
+            "start": "16/02/2019",
+            "end": "31/05/2019",
+            "url": ""
+        },
+        {
+            "title": "Plain Arts Winter Exhibition",
+            "description": "",
+            "location": "Salisbury Library",
+            "start": "01/12/2018",
+            "end": "04/01/2019",
+            "url": ""
+        }
+    ]
+}
