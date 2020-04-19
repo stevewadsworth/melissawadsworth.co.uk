@@ -2,10 +2,10 @@
   "version": 3,
   "file": "svelte-bundle.css",
   "sources": [
-    "../svelte-components/ContactDetails.svelte",
-    "../svelte-components/Gallery.svelte",
-    "../svelte-components/Events.svelte",
-    "../svelte-components/Location.svelte"
+    "../ContactDetails.svelte",
+    "../Gallery.svelte",
+    "../Events.svelte",
+    "../Location.svelte"
   ],
   "sourcesContent": [
     "<h2>Contact</h2>\n<ul>\n    <li>\n        <span>\n            <i class=\"fas fa-phone\"></i>\n            <a href=\"tel:+447966417196\">+44 (0) 7966 417196</a>\n        </span>\n    </li>\n    <li>\n        <span>\n            <i class=\"fas fa-envelope\"></i>\n            <a href=\"mailto:info@melissawadsworth.co.uk\">info@melissawadsworth.co.uk</a>\n        </span>\n    </li>\n    <li>\n        <span>\n            <i class=\"fab fa-instagram\"></i>\n            <a href=\"https://www.instagram.com/melissa_wadsworth_artist/\">melissa_wadsworth_artist</a>\n        </span>\n    </li>\n</ul>\n\n\n<style>\nul {\n  position: relative;\n  text-align: start;\n  list-style-type: none;\n  margin: auto;\n  padding: 0;\n  overflow: hidden;\n  width: fit-content\n}\n</style>",
