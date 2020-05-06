@@ -168,6 +168,10 @@
   max-height: 400px;
   object-fit: contain;
   pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 @media screen and (max-width: 750px) {
