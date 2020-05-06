@@ -1,3 +1,10 @@
+<style>
+p {
+  text-align: justify;
+  margin: 1rem;
+}
+</style>
+
 <h2>About</h2>
 <article>
     <p>Melissa Wadsworth is an artist based in the Wiltshire city of Salisbury. Her work often depicts scenes and people from  Salisbury and the surrounding countryside.</p>

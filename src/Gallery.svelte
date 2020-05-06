@@ -1,97 +1,58 @@
 <script>
-function moveGallery(direction) {
-  let pic = document.querySelector(".galleryItemVisible");
-  let next;
-  if (direction > 0) {
-    next = pic.nextElementSibling || pic.parentElement.firstElementChild;
-  } else if (direction < 0) {
-    next = pic.previousElementSibling || pic.parentElement.lastElementChild;
+  import { onMount } from "svelte";
+
+  export let url;
+
+  let current = 0;
+  let data = [];
+
+  onMount(async function() {
+      const response = await fetch(url);
+      data = await response.json();
+  });
+
+  function moveRight() {
+    current = current + 1;
+    if (current >= data.length) {
+      current = 0;
+    }
   }
-  pic.classList.remove("galleryItemVisible");
-  next.classList.add("galleryItemVisible");
-}
+
+  function moveLeft() {
+    current = current - 1;
+    if (current < 0) {
+      current = data.length - 1;
+    }
+  }
+
+  function rightClick(e) {
+    console.log(e);
+    return true;
+  }
 </script>
 
 <h2>Gallery</h2>
 <div class="galleryContainer">
-    <button class="galleryButtonText galleryButtonTextLeft" onclick="moveGallery(1)"><span class="fas fa-chevron-left"></span> Previous</button>
-    <button class="galleryButtonText galleryButtonTextRight" onclick="moveGallery(-1)">Next <span class="fas fa-chevron-right"></span></button>
-    <button id="leftButton" class="galleryButton galleryButtonLeft" onclick="moveGallery(-1)" title="previous">
+    <button class="galleryButtonText galleryButtonTextLeft" on:click="{moveLeft}"><span class="fas fa-chevron-left"></span> Previous</button>
+    <button class="galleryButtonText galleryButtonTextRight" on:click="{moveRight}">Next <span class="fas fa-chevron-right"></span></button>
+    <button id="leftButton" class="galleryButton galleryButtonLeft" on:click="{moveLeft}" title="previous">
     <span class="fas fa-chevron-left"></span>
     </button>
     <ul id="galleryList" class="galleryList">
-    <li class="galleryItem galleryItemVisible">
-        <div class="galleryItemContainer">
-        <img class="galleryImage" src="images/Bunting.jpeg" alt="Bunting, Acrylic on canvas, 2019">
-        <div class="galleryDescription">
-            <p>Bunting</p>
-            <p>Acrylic on canvas</p>
-            <p>2019</p>
-        </div>
-        </div>
-    </li>
-    <li class="galleryItem">
-        <div class="galleryItemContainer">
-        <img class="galleryImage" src="images/Coombe-Bissett-III.jpeg" alt="Coombe Bissett Barn III, Charcoal on paper, 2019">
-        <div class="galleryDescription">
-            <p>Coombe Bissett Barn III</p>
-            <p>Charcoal on paper</p>
-            <p>2019</p>
-        </div>
-        </div>
-    </li>
-    <li class="galleryItem">
-        <div class="galleryItemContainer">
-        <img class="galleryImage" src="images/Portrait-of-a-Woman-II.jpeg" alt="Portrait of a Woman II, Gouache, 2019">
-        <div class="galleryDescription">
-            <p>Portrait of a Woman II</p>
-            <p>Gouache</p>
-            <p>2019</p>
-        </div>
-        </div>
-    </li>
-    <li class="galleryItem">
-        <div class="galleryItemContainer">
-        <img class="galleryImage" src="images/Hill-and-Vale.jpeg" alt="Hill and Vale, Charcoal on paper, 2019">
-        <div class="galleryDescription">
-            <p>Hill and Vale</p>
-            <p>Charcoal on paper</p>
-            <p>2019</p>
-            </div>
-        </div>
-    </li>
-    <li class="galleryItem">
-        <div class="galleryItemContainer">
-        <img class="galleryImage" src="images/Trees.jpeg" alt="Trees, Acrylic on canvas, 2019">
-        <div class="galleryDescription">
-            <p>Trees</p>
-            <p>Acrylic on canvas</p>
-            <p>2019</p>
-        </div>
-        </div>
-    </li>
-    <li class="galleryItem">
-        <div class="galleryItemContainer">
-            <img class="galleryImage" src="images/Portraits-of-Lizzy.jpeg" alt="Portraits of Lizzy, Pencil on paper, 2019">
+      {#each data as item, i}
+        <li class="galleryItem {current === i ? 'galleryItemVisible' : ''}">
+          <div class="galleryItemContainer">
+            <img class="galleryImage" src="images/{item.image}" alt="{item.title}, {item.year}">
             <div class="galleryDescription">
-            <p>Portraits of Lizzy</p>
-            <p>Pencil on paper</p>
-            <p>2019</p>
+                <p>{item.title}</p>
+                <p>{item.medium}</p>
+                <p>{item.year}</p>
             </div>
-        </div>
+          </div>
         </li>
-        <li class="galleryItem">
-            <div class="galleryItemContainer">
-            <img class="galleryImage" src="images/Portrait-of-a-Woman-I.jpeg" alt="Portrait of a Woman I, Pencil on paper, 2019">
-            <div class="galleryDescription">
-                <p>Woman</p>
-                <p>Pencil on paper</p>
-                <p>2019</p>
-            </div>
-            </div>
-        </li>
-        </ul>
-    <button id="rightButton" class="galleryButton galleryButtonRight" onclick="moveGallery(1)" title="next">
+      {/each}
+    </ul>
+    <button id="rightButton" class="galleryButton galleryButtonRight" on:click="{moveRight}" title="next">
     <span class="fas fa-chevron-right"></span>
     </button>
 </div>
@@ -174,6 +135,7 @@ function moveGallery(direction) {
 .galleryItem {
   position: absolute;
   width: inherit;
+  height: inherit;
   align-items: center;
   transition: opacity 500ms;
   visibility: hidden;
@@ -205,6 +167,7 @@ function moveGallery(direction) {
 .galleryImage {
   max-height: 400px;
   object-fit: contain;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 750px) {

@@ -2,17 +2,17 @@
     import { onMount } from "svelte";
     import Location from "./Location.svelte";
 
-    export let apiURL;
+    export let url;
 
-    let events = [];
-    let data = {
+    export let data = {
         title: "",
         description: "",
         events: []
     };
+    let events = data.events;
 
     onMount(async function() {
-        const response = await fetch(apiURL);
+        const response = await fetch(url);
         data = await response.json();
         events = data.events;
     });

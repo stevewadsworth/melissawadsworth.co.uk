@@ -1,23 +1,7 @@
-import Events from './events/Events.svelte';
-import ContactDetails from './ContactDetails.svelte';
-import About from './About.svelte';
-import Gallery from './Gallery.svelte';
+import App from './App.svelte';
 
-new Events({
-	target: document.querySelector('#exhibitions'),
-	props: {
-		apiURL: "events.json"
-	}
-})
+const app = new App({
+	target: document.body,
+});
 
-new ContactDetails({
-	target: document.querySelector('#contact')
-})
-
-new About({
-	target: document.querySelector('#about')
-})
-
-new Gallery({
-	target: document.querySelector('#gallery')
-})
+export default app;

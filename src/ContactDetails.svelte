@@ -20,7 +20,6 @@
     </li>
 </ul>
 
-
 <style>
 ul {
   position: relative;
@@ -30,5 +29,9 @@ ul {
   padding: 0;
   overflow: hidden;
   width: fit-content
+}
+
+li {
+    padding: 0.25rem;
 }
 </style>
